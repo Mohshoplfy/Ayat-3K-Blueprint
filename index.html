@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ApexNest After-Sales Offer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #1e1e2f;
+    }
+
+    header {
+      background: linear-gradient(135deg, #6d28d9, #9333ea);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #e0e7ff;
+    }
+
+    .countdown {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      color: #fcd34d;
+    }
+
+    section {
+      padding: 3rem 1rem;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #4f46e5;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.8rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service {
+      background-color: white;
+      border-left: 5px solid #0ea5e9;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .cta-section {
+      text-align: center;
+      background-color: #f0fdfa;
+      padding: 3rem 1rem;
+    }
+
+    .cta-section h2 {
+      color: #0ea5e9;
+    }
+
+    .cta-btn {
+      background: linear-gradient(to right, #06b6d4, #3b82f6);
+      padding: 1rem 2rem;
+      color: white;
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: linear-gradient(to right, #3b82f6, #06b6d4);
+    }
+
+    footer {
+      background-color: #1e1e2f;
+      color: #d1d5db;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Build Your $3K Shopify Store</h1>
+    <p>Launch Now. Pay Only After You See Results.</p>
+    <div class="countdown" id="countdown"></div>
+  </header>
+
+  <section>
+    <h2>What’s the $3K Blueprint?</h2>
+    <ul>
+      <li>Sell one product worth $30</li>
+      <li>Target: 7 sales a day = $210/day</li>
+      <li>Monthly Revenue = $6,300</li>
+      <li>50% margin = $3,000 profit</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What You’ll Get</h2>
+    <div class="services-grid">
+      <div class="service">
+        <h3>✅ Shopify Store Setup</h3>
+        <p>Custom-built, clean, mobile-ready store optimized to convert.</p>
+      </div>
+      <div class="service">
+        <h3>✅ Product & Funnel Strategy</h3>
+        <p>We help you pick the right product & structure the funnel.</p>
+      </div>
+      <div class="service">
+        <h3>✅ Email & Automation Setup</h3>
+        <p>Recover carts, welcome buyers, and retain customers.</p>
+      </div>
+      <div class="service">
+        <h3>✅ Sales-Based Payment</h3>
+        <p>You only pay us after your store begins selling!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Limited Slots: Offer Ends In</h2>
+    <p>We’re onboarding only a few clients under the pay-after-results model.</p>
+    <a href="#" class="cta-btn">Claim Your Spot Now</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ApexNestSolution | All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Countdown to 72 hours from now
+    const countdownEl = document.getElementById("countdown");
+    const endTime = new Date(Date.now() + 72 * 60 * 60 * 1000);
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = endTime - now;
+
+      if (diff <= 0) {
+        countdownEl.innerHTML = "Offer has ended.";
+        return;
+      }
+
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `Offer ends in: ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
