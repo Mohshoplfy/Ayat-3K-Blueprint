@@ -1,4 +1,4 @@
-
+2
 
 <!DOCTYPE html>
 <html lang="en">
@@ -203,6 +203,14 @@
       height: auto;
       display: block;
     }
+    .countdown {
+      background-color: #228B22;
+      color: white;
+      padding: 20px;
+      font-size: 24px;
+      margin-top: 30px;
+      border-radius: 6px;
+    }
   </style>
 </head>
 <body>
@@ -234,8 +242,53 @@
     <p>Welcome to the Apexnestsolutions Support Center — We're a trusted firm where you can connect instantly with our certified support team. Whether you're facing errors, bugs, store setup assistance, or need expert advice — we've got you covered. Our Telegram and WhatsApp live chat options give you fast access to real support in real time.</p>
   </section>
 
+<section class="about">
+    <h2>Real-Time Help from Verified Apexnestsolutions Experts, Build a $3,000/Month Business with Just One Product</h2>
+    <p>Problem: Most people struggle to hit consistent income goals online.
+Solution: What if your only goal was to sell 7 items a day at $30 each?.</p>
+    <p>We’ve built a realistic income blueprint for new and existing online entrepreneurs. The strategy? Selling 200 units of a $20 or $30 product monthly. With the right product, structure, and marketing, this equals $3,000 in profits — consistently..</p>
+  </section>
+
+<div class="countdown" id="countdown"></div>
+
+    <h1>LIMITED OFFER</h1>
+
+  <script>
+    // Store the initial countdown duration (in seconds)
+    const initialCountdown = 98 * 60 * 60; // 98 hours
+
+    // Check if the countdown start time is saved in localStorage
+    let countdownStart = localStorage.getItem('countdownStart');
+
+    if (!countdownStart) {
+      countdownStart = Date.now();
+      localStorage.setItem('countdownStart', countdownStart);
+    }
+
+    function updateCountdown() {
+      const now = Date.now();
+      const elapsed = Math.floor((now - countdownStart) / 1000);
+      const remaining = Math.max(initialCountdown - elapsed, 0);
+
+      const hours = Math.floor(remaining / 3600);
+      const minutes = Math.floor((remaining % 3600) / 60);
+      const seconds = remaining % 60;
+
+      document.getElementById("countdown").textContent =
+        `Offer ends in: ${hours}h ${minutes}m ${seconds}s`;
+
+      if (remaining > 0) {
+        setTimeout(updateCountdown, 1000);
+      } else {
+        document.getElementById("countdown").textContent = "This offer has expired.";
+      }
+    }
+
+    updateCountdown();
+</section>
+
   <section class="services">
-    <h2>What We Can Help You With</h2>
+    <h2>Other Things We Can Help You With</h2>
     <div class="services-grid">
       <div class="service">
         <h3>Store Setup Help</h3>
@@ -257,16 +310,24 @@
   </section>
 
   <section class="testimonials">
-    <h2>What Merchants Are Saying</h2>
-    <blockquote>“I got help in under 10 minutes on Telegram! These experts really know Shopify inside-out.”</blockquote>
-    <blockquote>“Was stuck for days until I chatted with an expert on WhatsApp. Problem solved in one session!”</blockquote>
-    <blockquote>“I was getting clicks but no sales. After a quick session with the support expert, they helped me fix my product pages and trust issues. I made 3 sales that same day!”</blockquote>
-    <blockquote>“My checkout page kept crashing and I was losing customers daily. They fixed the issue in one call and even optimized my cart settings. Problem solved!”</blockquote>
+    <h2>What Clients Are Saying</h2>
+    <blockquote>“This blueprint is gold. I had zero consistent sales before. By the 8th week, I’d done $3,060 in revenue with about 38% profit margin. What I love most is it teaches focus and discipline!"
+    <footer>— Tolu O., Handmade Crafts Store</footer> </blockquote>
+    <blockquote>“The idea sounded promising, but I was expecting more hands-on guidance throughout. The blueprint is okay, but I struggled implementing some parts on my own"
+    <footer>— Jenny Clark., Fashion Store</footer> </blockquote>
+    <blockquote>“I got help in under 10 minutes on Telegram! These experts really know Shopify inside-out.”
+    <footer>— Sandra K., Online Boutique Owner</footer> </blockquote>
+    <blockquote>“I like the layout and motivation behind it, but I feel like beginners will still struggle with execution. That said, I managed to get to $2,100 in sales, which is progress.”
+    <footer>— Linda E., Print-on-Demand Seller</footer> </blockquote>
+    <blockquote>“I’m giving 4 stars because the blueprint really helped me organize my store and push focused sales, though I had to adjust the strategy slightly for my local market. Still hit $3k in 2 months.”
+    <footer>— Cynthia M., Home Decor Business Owner</footer> </blockquote>
+    <blockquote>“I reached $2,700 in 6 weeks. Not quite $3k, but it’s still the most money I’ve made from my store in a month. Some tweaks were needed for my niche, but it works..”
+    <footer>— James O., Digital Products Seller</footer> </blockquote>
   </section>
 
   <section class="contact" id="contact">
     <h2>Need Help Now?</h2>
-    <p>Connect with a live Shopify support expert now. Choose your preferred platform below and get real-time help:</p>
+    <p>Connect with a live Apexnest support expert now. Choose your preferred platform below and get $3k Blueprint and guidance:</p>
     <div class="cta-container">
       <a href="https://wa.link/dtunia" class="cta-button whatsapp">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> Chat on WhatsApp
@@ -286,7 +347,7 @@
 
 
   <footer>
-    <p>&copy;  2025 Shopify LLC, 150 Elgin Street, 8th Floor, Ottawa, Ontario, Canada K2P 1L4.</p>
+    <p>&copy;  2025 Apexnestsolutions LLC, 920101 Minna , 8th Floor, Wuse, Municipal, Abuja.</p>
   </footer>
 </body>
 </html>
