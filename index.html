@@ -252,19 +252,21 @@
     <p>Solution: What if your only goal was to sell 7 items a day at $30 each?.</p>
     
 <section class="about">
-<p>We’ve built a realistic income blueprint for new and existing online entrepreneurs. The strategy? Selling 200 units of a $20 or $30 product monthly. With the right product, structure, and marketing, this equals $3,000 in profits — consistently..</p>
+    <p>We’ve built a realistic income blueprint for new and existing online entrepreneurs. The strategy? Selling 200 units of a $20 or $30 product monthly. With the right product, structure, and marketing, this equals $3,000 in profits — consistently..</p>
   
-<p>If you're running an online store (or planning to), here’s a simple but powerful concept:</p>
+<section class="about">
+    <p>If you're running an online store (or planning to), here’s a simple but powerful concept:</p>
 
 <p>✅ Sell 7 units of a $20 or $30 product daily</p>
 <p>✅ $6,000/month in revenue</p>
 <p>✅ $3,000/month in profit (with the right margins)</p>
 
-<p>It’s called the $3K Blueprint, and it’s helping store owners stay focused, build momentum, and scale up — even if they’re just starting out.
+<section class="about">
+    <p>It’s called the $3K Blueprint, and it’s helping store owners stay focused, build momentum, and scale up — even if they’re just starting out.
 
 We’ve outlined the full steps: product selection, funnel setup, and growth strategy. Want a copy?
 
-Just reply “Blueprint” to access it now</p>
+Just reply <h2>“Blueprint”</h2> to access it now</p>
 </section>
 
 <div class="countdown" id="countdown"></div>
@@ -272,37 +274,36 @@ Just reply “Blueprint” to access it now</p>
 <h1>LIMITED OFFER</h1>
 
 <script>
-    // Store the initial countdown duration (in seconds)
-    const initialCountdown = 98 * 60 * 60; // 98 hours
+  const initialCountdown = 98 * 60 * 60; // 98 hours
+  let countdownStart = localStorage.getItem('countdownStart');
 
-    // Check if the countdown start time is saved in localStorage
-    let countdownStart = localStorage.getItem('countdownStart');
+  if (!countdownStart) {
+    countdownStart = Date.now();
+    localStorage.setItem('countdownStart', countdownStart);
+  }
 
-    if (!countdownStart) {
-      countdownStart = Date.now();
-      localStorage.setItem('countdownStart', countdownStart);
+  function updateCountdown() {
+    const now = Date.now();
+    const elapsed = Math.floor((now - countdownStart) / 1000);
+    const remaining = Math.max(initialCountdown - elapsed, 0);
+
+    const hours = Math.floor(remaining / 3600);
+    const minutes = Math.floor((remaining % 3600) / 60);
+    const seconds = remaining % 60;
+
+    document.getElementById("countdown").textContent =
+      `Offer ends in: ${hours}h ${minutes}m ${seconds}s`;
+
+    if (remaining > 0) {
+      setTimeout(updateCountdown, 1000);
+    } else {
+      document.getElementById("countdown").textContent = "This offer has expired.";
     }
+  }
 
-    function updateCountdown() {
-      const now = Date.now();
-      const elapsed = Math.floor((now - countdownStart) / 1000);
-      const remaining = Math.max(initialCountdown - elapsed, 0);
+  updateCountdown();
+</script>
 
-      const hours = Math.floor(remaining / 3600);
-      const minutes = Math.floor((remaining % 3600) / 60);
-      const seconds = remaining % 60;
-
-      document.getElementById("countdown").textContent =
-        `Offer ends in: ${hours}h ${minutes}m ${seconds}s`;
-
-      if (remaining > 0) {
-        setTimeout(updateCountdown, 1000);
-      } else {
-        document.getElementById("countdown").textContent = "This offer has expired.";
-      }
-    }
-
-    updateCountdown();
     </div>
     </div>
 </section>
